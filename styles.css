@@ -1,0 +1,62 @@
+:root{
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --primary: #2563eb;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: linear-gradient(160deg, var(--bg), #ffffff 60%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+.wrap.card {
+  max-width: 960px;
+  margin: 16px auto;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+.brand { display:flex; align-items:center; justify-content:center; padding: 4px 0 0; }
+.brand-logo { max-width: 260px; width: 60%; height: auto; display:block; }
+.brand-desc { text-align:center; color: var(--muted); font-size:.95rem; margin: 8px 0 16px; }
+
+.controls { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; margin-bottom: 12px; }
+.file { display: inline-block; border: 1px dashed var(--border); border-radius: 10px; padding: .8rem 1rem; background: #f9fafb; cursor: pointer; text-align:center; }
+.file input[type=file] { display: none; }
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: flex; gap: 16px; align-items: center;
+  background: #fafcff;
+}
+legend { padding: 0 6px; color: #374151; }
+
+.name-row { display: grid; grid-template-columns: 140px 1fr; gap: 10px; align-items: center; }
+#filename { padding: .55rem .7rem; border: 1px solid var(--border); border-radius: 10px; }
+
+.btn { padding: .7rem 1rem; border: 1px solid var(--border); border-radius: 10px; background: #f8fafc; cursor: pointer; }
+.btn.primary { background: #2563eb; color: #fff; border-color: #1d4ed8; }
+.btn:disabled, input:disabled, button:disabled { opacity: .6; cursor: not-allowed; }
+
+.canvas-wrap { position: relative; margin-top: 10px; display:flex; justify-content:center; }
+#canvas {
+  width: min(360px, 70vw);
+  height: calc(min(360px, 70vw) * (1920 / 1080));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: block;
+  background: #fff;
+  touch-action: none;
+}
+.overlay-hint { position: absolute; bottom: 8px; right: 8px; font-size: .8rem; color: #334155; background: #ffffffcc; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--border); }
+
+footer { margin-top: 12px; color: var(--muted); font-size: .85rem; text-align: center; }

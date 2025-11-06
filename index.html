@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>„- Anzeige -“ Web-App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap card">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Firmenlogo" class="brand-logo" />
+    </div>
+    <p class="brand-desc">
+      Vorlage (JPG) hochladen, im Rahmen verschieben. „- Anzeige -“ wird oben links gesetzt. Firmenlogo ist immer sichtbar (nur im UI, nicht im Export).
+    </p>
+
+    <section class="controls">
+      <label class="file">
+        <input type="file" id="upload" accept="image/jpeg,image/jpg" />
+        <span>Vorlage hochladen (JPG)</span>
+      </label>
+
+      <fieldset id="colorFieldset" disabled>
+        <legend>Text-Farbe</legend>
+        <label><input type="radio" name="color" value="white" checked> Weiß</label>
+        <label><input type="radio" name="color" value="black"> Schwarz</label>
+      </fieldset>
+
+      <div class="name-row">
+        <label for="filename">Dateiname</label>
+        <input id="filename" type="text" placeholder="bild_mit_anzeige.jpg" disabled />
+      </div>
+
+      <button id="downloadBtn" class="btn primary" disabled>Download (JPG 1080×1920)</button>
+    </section>
+
+    <div class="canvas-wrap">
+      <canvas id="canvas" width="1080" height="1920" aria-label="Vorschau 1080×1920"></canvas>
+      <div class="overlay-hint">Ziehen, um die Vorlage zu verschieben</div>
+    </div>
+
+    <footer>100% client-seitig · Keine Server-Uploads · GitHub Pages kompatibel</footer>
+  </main>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
